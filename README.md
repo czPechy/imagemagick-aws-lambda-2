@@ -14,7 +14,6 @@
 
 * `docker pull public.ecr.aws/lambda/nodejs:20`
 * `docker tag public.ecr.aws/lambda/nodejs lambda/nodejs:20`
-* `make all`
 * `make build/layer.zip`
 
 ## Author

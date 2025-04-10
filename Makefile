@@ -1,12 +1,12 @@
 PROJECT_ROOT = $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
-DOCKER_IMAGE ?= lambda/nodejs:20
+DOCKER_IMAGE ?= public.ecr.aws/lambda/nodejs:20
 TARGET ?=/opt/
 
 MOUNTS = -v $(PROJECT_ROOT):/var/task \
 	-v $(PROJECT_ROOT)result:$(TARGET)
 
-DOCKER = docker run -it --rm -w=/var/task/build
+DOCKER = docker run --platform=linux/amd64 -it --rm -w=/var/task/build
 build result: 
 	mkdir $@
 
